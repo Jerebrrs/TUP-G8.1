@@ -21,6 +21,7 @@ namespace Guia8
             Console.WriteLine("2- Procesar varios números.");
             Console.WriteLine("3- Mostrar máximo y mínimo.");
             Console.WriteLine("4- Mostrar promedio.");
+            Console.WriteLine("5- Mostrar cantidad de datos procesados.");
             int op = Convert.ToInt32(Console.ReadLine());
             return op;
         }
@@ -67,7 +68,20 @@ namespace Guia8
             Console.WriteLine("Precione una tecla para volver al menu principal.");
             Console.ReadKey();
         }
-
+        static void MostrarPantallaCantidad()
+        {
+            Console.Clear();
+            Console.WriteLine("Pantalla de cantidad de valores procesados\n");
+            if (servicio.Contador>0)
+            {
+                Console.WriteLine($"Cantidad: {servicio.Contador}");
+            }else
+            {
+                Console.WriteLine("Cantidad: No se han ingresado números");
+            }
+            Console.WriteLine("Precione una tecla para volver al menu principal.");
+            Console.ReadKey();
+        }
         static void Main(string[] args)
         {
             MostrarPantallaIniciarVariables();
@@ -91,6 +105,12 @@ namespace Guia8
                         break;
                     case 4:
                         MostrarPantallaCalcularYmostrarPromedio();
+                        break;
+                    case 5:
+                        MostrarPantallaCantidad();
+                        break;
+                    case 6:
+                        MostrarPantallaIniciarVariables();
                         break;
                     default:
                         op = -1;
